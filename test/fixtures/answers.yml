@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  choice_question_id: 1
+  akey: MyString
+  bkey: MyString
+  ckey: MyString
+  dkey: MyString
+  correctkey: 1
+
+two:
+  choice_question_id: 1
+  akey: MyString
+  bkey: MyString
+  ckey: MyString
+  dkey: MyString
+  correctkey: 1

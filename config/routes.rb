@@ -5,8 +5,17 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   get    'help'  =>  'static_pages#help'
-  resources :courses
-  resources :users
+  resources :courses do
+    resources :subjects do
+      resources :tasks do
+        resources :tests do
+          resources :choice_questions do
+            resources :answers
+          end
+        end
+      end
+    end
+  end
   namespace :supervisor do
     resources :users
   end
