@@ -14,19 +14,22 @@
 ActiveRecord::Schema.define(version: 20150213080814) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "email",           limit: 255
-    t.string   "address",         limit: 255
+    t.string   "name",              limit: 255
+    t.string   "email",             limit: 255
+    t.string   "address",           limit: 255
     t.datetime "date_of_birth"
-    t.string   "password_digest", limit: 255
-    t.string   "remember_digest", limit: 255
-    t.boolean  "admin",           limit: 1
-    t.boolean  "activated",       limit: 1
+    t.datetime "date_of_join"
+    t.string   "password_digest",   limit: 255
+    t.string   "remember_digest",   limit: 255
+    t.boolean  "is_supervisor",     limit: 1
+    t.boolean  "activated",         limit: 1
+    t.string   "activation_digest", limit: 255
     t.datetime "activated_at"
-    t.string   "reset_digest",    limit: 255
+    t.string   "reset_digest",      limit: 255
     t.datetime "reset_sent_at"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "avatar",            limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
 end
