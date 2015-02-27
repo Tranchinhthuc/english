@@ -1,0 +1,15 @@
+<div id="content">
+    <h1><%= @choice_question.number %></h1>
+    <p>
+      <%= @choice_question.content %>
+    </p>
+    <p>
+      A. <%= @answers.first.akey %> </br>
+      B. <%= @answers.first.bkey %> </br>
+      C. <%= @answers.first.ckey %> </br>
+      D. <%= @answers.first.dkey %> </br>
+
+    </p>
+
+  <%= link_to 'Edit question', edit_choice_question_path(@choice_question), remote: true, class: "btn btn-primary" %> </br>
+</div>

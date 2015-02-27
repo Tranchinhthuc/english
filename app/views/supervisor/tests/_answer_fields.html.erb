@@ -1,0 +1,16 @@
+<p>
+  <%= f.label :akey, "A" %>
+  <%= f.text_field :akey %> </br>
+
+  <%= f.label :bkey, "B" %>
+  <%= f.text_field :bkey %> </br>
+
+  <%= f.label :ckey, "C" %>
+  <%= f.text_field :ckey %> </br>
+
+  <%= f.label :dkey, "D" %>
+  <%= f.text_field :dkey %> </br>
+
+  <%= f.label :correctkey, "Correct key" %>
+  <%= f.select :correctkey, options_for_select(%w[A B C D]) %>
+</p>

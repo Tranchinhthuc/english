@@ -1,0 +1,35 @@
+<%= form_for @question do |q| %>
+  <p>
+    <%= q.label :content, "Question" %><br />
+    <%= q.text_area :content, :rows => 3, class: "form-control" %>
+  </p>
+  <%= q.fields_for :answers do |a| %>
+    <div class="input-group">
+      <%= a.label :akey, "A", class: "input-group-addon", id: "basic-addon1" %>
+      <%= a.text_field :akey, class: "form-control", placeholder: "A key",
+                            'aria-describedby' => "basic-addon1" %>
+     </div>
+     <div class="input-group">
+        <%= a.label :bkey, "B", class: "input-group-addon", id: "basic-addon1" %>
+        <%= a.text_field :bkey, class: "form-control", placeholder: "B key",
+                            'aria-describedby' => "basic-addon1" %>
+      </div>
+      <div class="input-group">
+        <%= a.label :ckey, "C", class: "input-group-addon", id: "basic-addon1" %>
+        <%= a.text_field :ckey, class: "form-control", placeholder: "C key",
+                            'aria-describedby' => "basic-addon1" %>
+      </div>
+      <div class="input-group">
+        <%= a.label :dkey, "D", class: "input-group-addon", id: "basic-addon1" %>
+        <%= a.text_field :dkey, class: "form-control", placeholder: "D key",
+                            'aria-describedby' => "basic-addon1" %>
+      </div>
+
+      <div class="input-group">
+        <%= a.label :correctkey, "Correct key" %>
+        <%= a.select :correctkey, options_for_select(%w[A B C D]) %>
+      </div>
+      <%= q.hidden_field :test_id, :value => @test.id %>
+      <p><%= q.submit "Submit", class: "btn btn-primary" %></p>
+  <% end %>
+<% end %>

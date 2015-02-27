@@ -1,0 +1,2 @@
+module Supervisor::ChoiceQuestionsHelper
+end

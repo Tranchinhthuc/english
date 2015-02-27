@@ -1,0 +1,10 @@
+<%= form_for @task do |t| %>
+  <div class="field">
+    <%= t.label :name %>
+    <%= t.text_field :name, class: "form-control" %>
+  </div>
+  <%= t.hidden_field :subject_id, :value => @subject.id %>
+  <div class="actions">
+    <%= t.submit "Create task", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,2 +1,11 @@
-<h1>ChoiceQuestions#show</h1>
-<p>Find me in app/views/choice_questions/show.html.erb</p>
+<div id="content">
+    <h1><%= @choice_question.number %></h1>
+    <p>
+      <%= @choice_question.content %>
+    </p>
+    <p>
+      
+    </p>
+
+  <%= link_to 'Edit question', edit_choice_question_path(@choice_question), remote: true, class: "btn btn-primary" %> </br>
+</div>

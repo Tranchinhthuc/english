@@ -1,0 +1,9 @@
+<%= form_for [:supervisor, @test] do |f| %>
+  <div class="input-group">
+    <%= f.label :name, "Name", class: "input-group-addon", id: "basic-addon1" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Name of test",
+                            'aria-describedby' => "basic-addon1" %>
+    <%= f.hidden_field :task_id, :value => @task.id %>
+  </div>
+  <p><%= f.submit "Submit", class: "btn btn-primary" %></p>
+<% end %>

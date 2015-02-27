@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      redirect_to supervisor_users_url
+      redirect_to users_url
     else
       render "new"
     end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password,
      :password_confirmation, :address, :date_of_join,
-     :avatar, :is_supervisor)
+     :avatar)
   end
 
   def logged_in_user

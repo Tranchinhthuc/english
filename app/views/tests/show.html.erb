@@ -1,2 +1,21 @@
-<h1>Tests#show</h1>
-<p>Find me in app/views/tests/show.html.erb</p>
+<div class="col-md-8">
+  <div id="content">
+    <h1><%= @test.name %></h1>
+</div>
+</div>
+
+<div class="form-horizontal">  
+  <div class="col-md-4">
+      <h1>List tasks</h1>
+        <% @choice_questions.each do |choice_question| %>
+          <p>
+            <%= link_to choice_question.number, choice_question_path(choice_question), remote:true %>
+            <%# link_to 'Add tests', test_path(test), class: "btn btn-xs btn-primary", target: "_blank" %>
+            <%= link_to 'Destroy', choice_question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-warning" %>
+          </p>
+        <% end %>
+        <div >
+          <%= link_to 'Add a question', test_addquestion_path(@test), remote: true, class: "btn btn-primary" %> </br>
+        </div>
+  </div>
+</div>

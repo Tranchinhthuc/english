@@ -1,0 +1,14 @@
+<%= form_for [:supervisor, @subject] do |s| %>
+  <div class="field">
+    <%= s.label :name, :remote => true %>
+    <%= s.text_field :name, class: "form-control" %>
+  </div>
+  <%= s.hidden_field :course_id, :value => @course.id %>
+  <div class="field">
+    <%= s.label :description %><br>
+    <%= s.text_area :description, rows: 10, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= s.submit "Create Subject", class: "btn btn-primary" %>
+  </div>
+<% end %>

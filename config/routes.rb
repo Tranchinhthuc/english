@@ -6,6 +6,23 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   get    'help'  =>  'static_pages#help'
   resources :courses do
+    get "addsubject"
+  end
+  resources :subjects do
+    get "addtask"
+  end
+  resources :tasks do
+    get "addtest"
+  end
+  resources :tests do
+    get "addquestion"
+  end
+  resources :choice_questions
+  resources :users
+  resources :subjects
+  resources :tasks
+  resources :tests
+  resources :courses do   
     resources :subjects do
       resources :tasks do
         resources :tests do
@@ -18,5 +35,18 @@ Rails.application.routes.draw do
   end
   namespace :supervisor do
     resources :users
+    resources :choice_questions
+    resources :subjects do
+    get "addtask"
+  end
+    resources :tasks do
+    get "addtest"
+  end
+    resources :tests do
+    get "addquestion"
+  end
+    resources :courses do
+    get "addsubject"
+  end
   end
 end

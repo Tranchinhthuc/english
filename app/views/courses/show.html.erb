@@ -1,2 +1,27 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<div class="col-md-8">
+  <div id="content">
+    <h1><%= @course.name %></h1>
+    <p>
+      <%= @course.description %>
+    </p>
+  <%= link_to 'Edit course', edit_course_path(@course), remote: true, class: "btn btn-primary" %> </br>
+</div>
+</div>
+
+<div class="form-horizontal">  
+    <div class="col-md-4">
+      <h1>List subjects</h1>   
+      <p> <%= link_to "Show course content", course_path(@course), remote:true %> </p>
+        <% @subjects.each do |subject| %>
+          <p>
+            <%= link_to subject.name, subject_path(subject), remote: true %>
+            <%= link_to 'Add tasks', subject_path(subject), target: "_blank", class: "btn btn-xs btn-primary" %>
+            <%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-warning" %>
+          </p>
+        <% end %>
+        <div id="subject-form" >
+        <%= link_to 'Add a subject', course_addsubject_path(@course), 
+          remote: true, class: "btn btn-primary" %> </br>
+    </div>
+  </div>
+</div>
